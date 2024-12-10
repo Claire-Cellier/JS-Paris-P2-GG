@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./ResponsiveAlert.css";
 
 function ResponsiveAlert() {
 	const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -18,8 +19,8 @@ function ResponsiveAlert() {
 
 	return (
 		isSmallScreen && (
-			<div style={styles.alertBox}>
-				<p style={styles.alertText}>
+			<div className="alertBox">
+				<p className="alertText">
 					Pour une meilleure expérience, veuillez consulter ce site sur un
 					ordinateur ou un appareil avec un écran plus large.
 				</p>
@@ -27,24 +28,5 @@ function ResponsiveAlert() {
 		)
 	);
 }
-
-const styles = {
-	alertBox: {
-		position: "fixed",
-		top: 0,
-		left: 0,
-		width: "100%",
-		backgroundColor: "#ffcc00",
-		color: "#000",
-		textAlign: "center",
-		padding: "10px",
-		zIndex: 1000,
-	},
-	alertText: {
-		margin: 0,
-		fontSize: "16px",
-		fontWeight: "bold",
-	},
-};
 
 export default ResponsiveAlert;
